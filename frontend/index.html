@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Bloco de Notas</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/70b519f58c.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+    ></script>
+    <link href="./login.css" rel="stylesheet" type="text/css" />
+    <script async>
+      var usuarioEmail = localStorage.getItem("email");
+      if (!(usuarioEmail == null)) {
+        //verifica se o usuario ja fez login, caso sim reencaminha para a pagina principal
+        location.replace("./tasks.html");
+      }
+    </script>
+  </head>
+
+  <body>
+    <form id="loginForm" class="mt-3 loginForm" method="POST">
+      <div id="logInF">
+        <br /><br />
+        <h3 class="text-primary">
+          Gerenciador Pessoal
+          <br /><br />
+          <a href="./index.html"
+            ><img src="./imagens/logo.png" alt="logo" id="login"
+          /></a>
+        </h3>
+        <h3>Login</h3>
+      </div>
+      <hr />
+      <hr />
+      <div class="input-group mb-3">
+        <span class="input-group-text">Email </span>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          class="form-control"
+          placeholder="examplo@itel.com"
+        />
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text">Password</span>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          required
+          class="form-control"
+          placeholder="password"
+        />
+      </div>
+      <button type="submit" class="btn btn-primary form-control">Login</button>
+
+      <button
+        type="button"
+        class="btn btn-primary mt-3"
+        data-bs-toggle="modal"
+        data-bs-target="#novaContaModal"
+      >
+        Criar nova Conta
+      </button>
+    </form>
+
+    <!-- Modal para criar conta -->
+    <div
+      class="modal fade"
+      id="novaContaModal"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="staticBackdropLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div>
+              <h5 class="modal-title text-primary" id="staticBackdropLabel">
+                <img
+                  src="./imagens/novoUsuario.png"
+                  alt="logo"
+                  id="novoUsuario"
+                />
+                Nova Conta de Usuario
+              </h5>
+            </div>
+            <button
+              type="button"
+              id="closeModal"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form
+              id="novoUsuarioFormulario"
+              class="rounded border p-3 table caption-top"
+            >
+              <label> Nome Completo</label>
+              <input
+                type="text"
+                id="nome-completo"
+                placeholder="Nome Completo"
+                class="form-control"
+                required
+              /><br />
+              <label> Email</label>
+              <input
+                id="novo-email"
+                placeholder="email"
+                class="form-control"
+                type="text"
+                required
+              /><br />
+              <label> Senha</label>
+              <input
+                id="senha"
+                placeholder="senha"
+                class="form-control"
+                type="password"
+                required
+              />
+              <br />
+
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Cancelar
+                </button>
+                <button
+                  type="submit"
+                  id="botao_criar-conta"
+                  class="btn btn-primary"
+                >
+                  Criar Conta
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="funcoes.js"></script>
+  </body>
+</html>
