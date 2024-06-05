@@ -1,0 +1,13 @@
+.btn-primary,
+.bg-primary {
+  background: #6c63ff !important;
+}
+
+.text-primary {
+  color: #6c63ff !important;
+}
+
+.btn-outline-success:hover {
+  background: #e60606 !important;
+  border: #6c63ff;
+}

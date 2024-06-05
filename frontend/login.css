@@ -1,0 +1,48 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  color: white;
+}
+
+.main-container {
+  position: absolute;
+  margin: 0 auto;
+  top: 50%;
+}
+
+#login,
+#novoUsuario {
+  width: 50%;
+  height: 50%;
+  border-radius: 5%;
+}
+
+#novoUsuario {
+  width: 30%;
+  height: 30%;
+  border-radius: 5%;
+}
+
+#logInF {
+  margin: 0 auto !important;
+  text-align: center !important;
+}
+
+.loginForm {
+  margin: 0 auto;
+  position: relative;
+  width: 500px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.btn-primary,
+.bg-primary {
+  background: #6c63ff !important;
+}
+
+.text-primary {
+  color: #6c63ff !important;
+}
